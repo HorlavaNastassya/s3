@@ -53,13 +53,27 @@ export PATH=${PATH}:${NIFTYREG_INSTALL}/bin
 
 # Run
 
-Parameters:
+- To perform a skullstriping for a single scan, run s3.py. You might provide the following parameters:
 
 1) -i : Path to the input modality, nifti file (.nii or nii.gz) (Mandatory)
 
 2) -o : Path to the output folder (Optional)
 
 3) -t : Use this when the tissue registrations for white matter, gray matter and cerebral spinal fluid are required (Optional)
+
+
+- To perform a skullstriping for all scans in the folder, run s3_all.py script. The script takes the following parameters:
+
+1) -i : Path to the input folder, that contains all nifti file (.nii or nii.gz) (Mandatory)
+
+2) -o : Path to the output folder (Optional)
+
+3) -t : Use this when the tissue registrations for white matter, gray matter and cerebral spinal fluid are required (Optional)
+
+
+The script then formes a queque of all **.nifti** files withing the provided input folder and stores the preprocessed scans to the output folder. It is therefore advisible to have separate folders for input and output paths.  
+
+**Note**: As the script might be interrupted and not all files withing a folder would be proceeded, the script additionaly saves names of the scancs that were already preprocessed into *processed_images.npy* file. Once you want to continue preprocesing of the files withing the same folder, run the script with the same parameters as before and files that were already preprocesed would be removed from the queque.  
 
 # Example 
 Folder s3/example/ contains test scan called T1.nii To apply the s3 method to the example scan:
