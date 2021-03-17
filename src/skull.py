@@ -96,7 +96,7 @@ class SkullStripper():
         masked_data = np.multiply(tmp2, mask.get_data())
         # masked_data = np.multiply(patient.get_data(), mask.get_data())
         masked_data = nib.Nifti1Image(masked_data, patient.affine, patient.header)
-        path_to_save = utils.get_relative_path(os.path.join(self.output_path, output_name + ".nii.gz"))
+        path_to_save = utils.get_relative_path(os.path.join(self.output_path, output_name + ".nii"))
         nib.save(masked_data, path_to_save)
         return path_to_save
 
@@ -170,7 +170,7 @@ class SkullStripper():
 
         # 4) Apply the refine mask to image and to modalities
         print("Applying refined mask \n")
-        stripped_image = self.apply_mask(fixed_image, self.name + "_mask.nii.gz", self.name + "_masked")
+        stripped_image = self.apply_mask(fixed_image, self.name + "_mask.nii.gz", os.path.join('main_result', self.name))
         print("Results save as %s \n" % stripped_image)
 
         if not self.want_tissues:
