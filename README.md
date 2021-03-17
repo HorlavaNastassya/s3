@@ -76,7 +76,8 @@ The script then formes a queque of all **.nifti** files withing the provided inp
 **Note**: As the script might be interrupted and not all files withing a folder would be proceeded, the script additionaly saves names of the scancs that were already preprocessed into *processed_images.npy* file. Once you want to continue the preprocesing of the files withing the same folder, run the script with the same parameters as before. The script would then load the names of preprocessed files from *processed_images.npy* file and theywould be removed from the queque.
 
 # Example 
-Folder s3/example/ contains test scan called T1.nii To apply the s3 method to the example scan:
+
+To apply the s3 method to the example scan:
 ```
 cd s3
 python s3.py -i example/T1.nii
