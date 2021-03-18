@@ -11,7 +11,7 @@
 # Method
 The method is based on atlas registrations. Here we use atlas of normal adult brain anatomy extracted from [sri24](https://www.nitrc.org/projects/sri24/). The method consist of the following steps:
 
- 1. **Input:** Head MRI scan (shown in the light blue frame in Figurew)
+ 1. **Input:** Head MRI scan (shown in the light blue frame in Figure)
  2. Compute a rigid registration *f* that maps the brain atlas to the subject (Fig. blue box)
  3. Apply *f* to map the atlas brain mask and tissue segmentations to the subject scan (purple box). The registered mask provides a coarse approximation of the subject brain mask.
  4. Use the coarse brain mask to skull-strip the subject and the atlas scan (yellow box).
